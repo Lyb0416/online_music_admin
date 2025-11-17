@@ -1,33 +1,102 @@
-# online_music_admin
+# 🎵 在线音乐平台 - 管理端（Admin Dashboard）
 
-This template should help get you started developing with Vue 3 in Vite.
+本项目是在线音乐平台的管理端，用于平台数据管理与可视化统计。基于 Vue3 + Element Plus + ECharts 构建，提供用户、歌曲、歌手、歌单等管理功能，并展示实时数据统计。
 
-## Recommended IDE Setup
+## 🚀 功能概述
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### 用户管理
+- 用户信息列表、搜索、删除  
+- 查看用户性别比例与注册统计  
 
-## Type Support for `.vue` Imports in TS
+### 歌手管理
+- 歌手列表、添加、编辑、删除  
+- 查看歌手性别比例与国籍分布  
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 歌曲管理
+- 歌曲列表、上传、修改、删除  
+- 歌曲类型统计  
 
-## Customize configuration
+### 歌单管理
+- 歌单列表、添加、删除  
+- 统计歌单数量与风格  
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 可视化统计
+- 首页信息总览（用户总数、歌曲总数、歌手数量、歌单数量）  
+- ECharts 可视化图表：
+  - 用户性别比例  
+  - 歌手性别比例  
+  - 歌手国籍分布  
+  - 歌曲类型分布  
 
-## Project Setup
+## 🔗 技术栈
 
-```sh
+| 领域       | 技术                     |
+| ---------- | ------------------------ |
+| 主体框架   | Vue3                     |
+| UI 框架    | Element Plus             |
+| 图表       | ECharts                  |
+| 状态管理   | Pinia / Vuex             |
+| 路由       | Vue Router               |
+| 前端工具   | Axios                    |
+| 构建工具   | Vite                     |
+| 语言       | TypeScript               |
+
+## 📁 项目结构
+
+```bash
+public/
+└─ src
+├─ api # 与后端接口交互封装
+├─ assets
+│ ├─ css # 样式文件
+│ ├─ icons # 图标
+│ └─ images # 静态图片
+├─ components
+│ ├─ dialog # 弹窗组件
+│ └─ layouts # 布局组件
+├─ enums # 枚举常量
+├─ mixins # 公共混入方法
+├─ router # 路由管理
+├─ store # 状态管理
+├─ utils # 工具函数
+└─ views # 页面视图
+```
+
+---
+
+
+## ⚙️ 项目启动
+
+1. 安装依赖
+
+```bash
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+2. 启动项目
 
-```sh
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+3. 默认访问地址：
 
-```sh
-npm run build
+```arduino
+http://localhost:5173
 ```
+
+---
+
+## 💡 文件上传与资源加载
+
+- 图片资源由后端返回  
+- 前端负责展示，不保存文件  
+- 统一使用 `utils` 处理资源 URL  
+
+## 📊 数据可视化说明
+
+- 首页卡片显示用户、歌曲、歌手、歌单总数  
+- 使用 ECharts 绘制饼图和柱状图，显示性别、国籍和歌曲类型统计  
+- 数据通过 Axios 从服务端 API 获取，并实时更新
+
+---
